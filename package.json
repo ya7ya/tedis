@@ -5,7 +5,7 @@
   "scripts": {
     "doc:dev": "vuepress dev doc",
     "pkg:build": "rm -rf build/* && npx tsc -b tsconfig.app.json",
-    "pkg:test": "jest --config=jest.config.json",
+    "pkg:test": "jest --config=jest.config.js",
     "upload:doc": "chmod +x ./script/doc.sh && ./script/doc.sh",
     "upload:npm": "chmod +x ./script/npm.sh && ./script/npm.sh",
     "precommit": "lint-staged"

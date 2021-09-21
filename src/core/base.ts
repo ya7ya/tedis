@@ -130,7 +130,12 @@ export class Base implements InterfaceBase {
     this.socket.on("data", data => {
       this.protocol.write(data);
       while (true) {
-        this.protocol.parse();
+        try {
+          this.protocol.parse();
+        } catch (error) {
+          console.log('gotcha bitch', error)
+          break;
+        }
         if (!this.protocol.data.state) {
           break;
         }
